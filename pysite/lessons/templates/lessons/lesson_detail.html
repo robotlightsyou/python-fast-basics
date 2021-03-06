@@ -1,0 +1,19 @@
+{% extends "landing/base.html" %}
+
+{% block title %}
+    <title>{{ leson.name }}</title>
+{% endblock title %}
+
+{% block jumbo %}This is a test lesson{% endblock jumbo %}
+
+{% block content %}
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">{{ leson.pub_date }}</div>
+            <h2>{{ leson.name }}</h2>
+            {% comment %} {% for bod in Lesson_Content.objects.filter(lesson__name={{ leson.name }}) %}
+            <p>{{ bod }}</p>
+            {% endfor %} {% endcomment %}
+        </div>
+    </article>
+{% endblock content %}

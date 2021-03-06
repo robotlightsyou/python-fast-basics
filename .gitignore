@@ -1,0 +1,6 @@
+*.sqlite3
+# **/settings.py
+# **/static/first_app/images/*
+**/images/*
+**/config.json
+**/profile_pics/*
