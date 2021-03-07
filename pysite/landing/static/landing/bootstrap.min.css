@@ -9615,8 +9615,15 @@ a.text-dark:hover {
 
 .jumbotron bg-cover{
 	/* background-image: url('media/workspace-hotkey.png');  */
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
+    /* -webkit-background-size: 100% 100%; */
+    /* -moz-background-size: 100% 100%; */
+    /* -o-background-size: 100% 100%; */
+    background-size: cover;
+    background: contain;
+    width: 100vw;
+    padding-top: 0px;
+    padding-bottom:0px;
+    height: 100vh;
+    background-position: center;
+    max-width: 1400px;
 }

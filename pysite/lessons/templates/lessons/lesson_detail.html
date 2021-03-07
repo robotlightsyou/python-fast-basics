@@ -1,11 +1,12 @@
 {% extends "landing/base.html" %}
 
 {% block title %}
-    <title>{{ lesson.name }}</title>
+    <title>{{ lesson.slug }}</title>
 {% endblock title %}
 
 {% block jumbo %}
-    <div class="container mt-5">
+    {% comment %} <div class="container mt-5"> {% endcomment %}
+    <div class="container">
         <h1 style="text-align:center">python fast basics</h1>
     </div>
 {% endblock jumbo %}
