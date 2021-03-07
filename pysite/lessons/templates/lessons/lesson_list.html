@@ -15,10 +15,10 @@
         <h2>Current Lessons</h2>
         <ol>
             {% for lesson in lessons %}
-                <h2>
-                    <li><a href="{% url 'lesson' lesson.slug %}">{{ lesson.name }} {{ lesson.slug }}</a></li>
+                <h3>
+                    <li><a href="{% url 'lesson' lesson.slug %}">{{ lesson.name }}</a></li>
                     {% comment %} <li><a href="{{ lesson.slug }}">{{ lesson.name }} {{ lesson.slug }}</a></li> {% endcomment %}
-                </h2>
+                </h3>
             {% endfor %}
         </ol>
     </div>
