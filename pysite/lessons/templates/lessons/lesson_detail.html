@@ -7,6 +7,7 @@
 {% block jumbo %}This is a test lesson{% endblock jumbo %}
 
 {% block content %}
+<div class="container">
     <article class="media content-section">
         <div class="media-body">
             <div class="article-metadata">{{ lesson.pub_date }}</div>
@@ -14,8 +15,9 @@
             {% comment %} {% for element in lesson.context["elements"] %} {% endcomment %}
             {% for element in elements %}
             {% comment %} {% for element in lesson.elements %} {% endcomment %}
-            <p>{{ element.body }}</p>
+            <pre>{{ element.body }}</pre>
             {% endfor %}
         </div>
     </article>
+</div>
 {% endblock content %}

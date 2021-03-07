@@ -1,0 +1,25 @@
+{% extends 'landing/base.html' %}
+
+{% block title %}
+    <title>All lessons</title>
+{% endblock title %}
+
+{% block jumbo %}
+<div class="container mt-5">
+    <h1 style="text-align:center">View All Lessons</h1>
+</div>
+{% endblock jumbo %}
+
+{% block content %}
+    <div class="container">
+        <h2>Current Lessons</h2>
+        <ol>
+            {% for lesson in lessons %}
+                <h2>
+                    <li><a href="{% url 'lesson' lesson.slug %}">{{ lesson.name }} {{ lesson.slug }}</a></li>
+                    {% comment %} <li><a href="{{ lesson.slug }}">{{ lesson.name }} {{ lesson.slug }}</a></li> {% endcomment %}
+                </h2>
+            {% endfor %}
+        </ol>
+    </div>
+{% endblock content %}

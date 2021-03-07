@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import LessonDetailView
+from .views import LessonDetailView, LessonListView
 
 urlpatterns = [
     path("<slug:slug>", LessonDetailView.as_view(), name="lesson"),
+    path("list/", LessonListView.as_view(), name="lessonlist"),
     # path("<int:pk>", LessonDetailView.as_view(), name="lesson"),
 ]
