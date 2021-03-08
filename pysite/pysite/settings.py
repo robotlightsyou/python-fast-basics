@@ -28,7 +28,7 @@ with open(KEY_FILE) as config_file:
 SECRET_KEY = config["Secret_Key"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["45.79.86.220", "www.robotlightsyou.com"]
 
