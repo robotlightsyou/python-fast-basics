@@ -4,6 +4,7 @@
 **/images/*
 **/config.json
 **/profile_pics/*
+**/pysite/static/
 
 ### Django ###
 *.log

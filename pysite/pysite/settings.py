@@ -15,20 +15,22 @@ import json, os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+KEY_FILE = os.path.join(BASE_DIR, "config.json")
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-with open("config.json") as config_file:
+# with open("config.json") as config_file:
+with open(KEY_FILE) as config_file:
     config = json.load(config_file)
 SECRET_KEY = config["Secret_Key"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["45.79.86.220", "www.robotlightsyou.com"]
 
 
 # Application definition
@@ -110,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = "ETC/GMT+8"
+TIME_ZONE = "Etc/GMT+7"
 
 USE_I18N = True
 
@@ -122,4 +124,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
