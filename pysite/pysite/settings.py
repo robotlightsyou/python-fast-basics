@@ -30,7 +30,7 @@ SECRET_KEY = config["Secret_Key"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["45.79.86.220", "www.robotlightsyou.com"]
+ALLOWED_HOSTS = ["45.79.86.220", "www.robotlightsyou.com", "robotlightsyou.com"]
 
 
 # Application definition
