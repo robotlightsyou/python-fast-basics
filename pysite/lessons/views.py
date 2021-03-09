@@ -15,6 +15,4 @@ class LessonDetailView(DetailView):
     
 class LessonListView(ListView):
     model = models.Lesson
-    # template_name = "lessons/lesson_list.html"
     context_object_name = "lessons"
-    # ordering = ["name"]
