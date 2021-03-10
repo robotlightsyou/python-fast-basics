@@ -15,7 +15,7 @@
 <div class="container">
     <article class="media content-section">
         <div class="media-body">
-            <div class="article-metadata">{{ lesson.pub_date }}</div>
+            <div class="article-metadata">{{ lesson.pub_date |date:"d F Y" }}</div>
             <h2>{{ lesson.name }}</h2>
             {% comment %} {% for element in lesson.context["elements"] %} {% endcomment %}
             {% for element in elements %}
