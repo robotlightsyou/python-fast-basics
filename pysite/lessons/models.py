@@ -25,6 +25,9 @@ class Lesson_Content(models.Model):
     item_num = models.IntegerField(unique=True)
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
 
+    class Meta():
+        ordering = ["item_num"]
+
     def __str__(self):
         return str(f"{self.lesson}: {self.name} {self.item_num}")
         # return str(f"{self.lesson.name} {self.item_num}")
