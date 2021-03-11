@@ -30,11 +30,3 @@ class Lesson_Content(models.Model):
 
     def __str__(self):
         return str(f"{self.lesson}: {self.name} {self.item_num}")
-        # return str(f"{self.lesson.name} {self.item_num}")
-
-# class Lesson_Code(models.Model):
-#     item_num = models.FloatField()
-#     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
-    
-#     def __str__(self):
-
