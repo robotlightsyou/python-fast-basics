@@ -19,12 +19,19 @@ class Lesson(models.Model):
         return reverse("lesson", kwargs={"slug":self.slug})
 
 class Lesson_Content(models.Model):
-    body = models.TextField()
+    name = models.CharField(max_length=50, null=True, blank=True)
+    code = models.TextField(null=True, blank=True)
+    body = models.TextField(null=True, blank=True)
     item_num = models.IntegerField(unique=True)
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
 
     def __str__(self):
-        return str(f"{self.lesson.name} {self.item_num}")
+        return str(f"{self.lesson}: {self.name} {self.item_num}")
+        # return str(f"{self.lesson.name} {self.item_num}")
 
+# class Lesson_Code(models.Model):
+#     item_num = models.FloatField()
+#     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
     
+#     def __str__(self):
 

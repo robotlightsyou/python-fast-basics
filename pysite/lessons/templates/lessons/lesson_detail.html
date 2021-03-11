@@ -20,7 +20,11 @@
             {% comment %} {% for element in lesson.context["elements"] %} {% endcomment %}
             {% for element in elements %}
             {% comment %} {% for element in lesson.elements %} {% endcomment %}
-            <pre>{{ element.body }}</pre>
+                {%if not element.code %}
+                    <p>{{ element.body }}</p>
+                {% else %}
+                    <pre>{{ element.code }}</pre>
+                {% endif %}
             {% endfor %}
         </div>
     </article>

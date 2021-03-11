@@ -9613,17 +9613,30 @@ a.text-dark:hover {
 }
 
 
+/* .jumbotron bg-cover{ */
+/* 	/1* background-image: url('media/workspace-hotkey.png');  *1/ */
+/*     /1* -webkit-background-size: 100% 100%; *1/ */
+/*     /1* -moz-background-size: 100% 100%; *1/ */
+/*     /1* -o-background-size: 100% 100%; *1/ */
+/*     background-size: cover; */
+/*     background: contain; */
+/*     width: 100vw; */
+/*     padding-top: 0px; */
+/*     padding-bottom:0px; */
+/*     height: 100vh; */
+/*     background-position: center; */
+/*     max-width: 1400px; */
+/* } */
 .jumbotron bg-cover{
-	/* background-image: url('media/workspace-hotkey.png');  */
-    /* -webkit-background-size: 100% 100%; */
-    /* -moz-background-size: 100% 100%; */
-    /* -o-background-size: 100% 100%; */
+	/* background-image: url('./images/index_hero.JPG'); */ 
+	/* background-image: url('landing/images/index_hero.JPG');  */
+    height: 80vh;
     background-size: cover;
-    background: contain;
-    width: 100vw;
-    padding-top: 0px;
-    padding-bottom:0px;
-    height: 100vh;
     background-position: center;
-    max-width: 1400px;
+    color: #ffffff;
+    border-radius: 0px!important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    /* width: 100vw; */
 }
