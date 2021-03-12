@@ -28,10 +28,10 @@ with open(KEY_FILE) as config_file:
 SECRET_KEY = config["Secret_Key"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-# ALLOWED_HOSTS = ["45.79.86.220", "www.robotlightsyou.com", "robotlightsyou.com"]
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["45.79.86.220", "www.robotlightsyou.com", "robotlightsyou.com"]
+# ALLOWED_HOSTS = ["localhost"]
 
 
 # Application definition
@@ -130,6 +130,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
