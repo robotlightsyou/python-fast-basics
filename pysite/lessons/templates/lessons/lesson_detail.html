@@ -15,17 +15,17 @@
 <div class="container">
     <article class="media content-section">
         <div class="media-body">
-            <div class="article-metadata">{{ lesson.pub_date |date:"d F Y" }}</div>
-            <h2>{{ lesson.name }}</h2>
-            {% comment %} {% for element in lesson.context["elements"] %} {% endcomment %}
-            {% for element in elements %}
-            {% comment %} {% for element in lesson.elements %} {% endcomment %}
-                {% if not element.code %}
-                    <p>{{ element.body|safe }}</p>
-                {% else %}
-                    <pre>{{ element.code }}</pre>
-                {% endif %}
-            {% endfor %}
+            <div class="article-metadata">
+                <h2>{{ lesson.name }}</h2>
+                <small class="text-muted">{{ lesson.pub_date |date:"d F Y" }}</small>
+            </div>
+                {% for element in elements %}
+                    {% if not element.code %}
+                        <p>{{ element.body|safe }}</p>
+                    {% else %}
+                        <pre>{{ element.code }}</pre>
+                    {% endif %}
+                {% endfor %}
         </div>
     </article>
 </div>
