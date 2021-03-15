@@ -11,6 +11,7 @@ class LessonDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         name = get_object_or_404(models.Lesson, slug=self.kwargs.get('slug'))
         context["elements"] = models.Lesson_Content.objects.filter(lesson=name).order_by("item_num")
+        context["lessons"] = models.Lesson.objects.all()
         return context
     
 class LessonListView(ListView):
