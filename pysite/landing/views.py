@@ -6,3 +6,6 @@ def landing(request):
 
 def overview(request):
     return render(request, "landing/overview.html")
+
+def python(request):
+    return render(request, "landing/python.html")

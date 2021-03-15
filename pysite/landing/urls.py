@@ -19,5 +19,6 @@ from . import views
 
 urlpatterns = [
     path("", views.landing, name="landing"),
+    path("python", views.python, name="python"),
     path("overview", views.overview, name="overview"),
 ]

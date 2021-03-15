@@ -23,43 +23,48 @@
 
 </head>
 <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-warning">
-        <a class="navbar-brand" href="{% url 'landing' %}">robot<span style="color:#375A7F;">lights</span>you</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    {% block navbar %}
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-warning">
+            <a class="navbar-brand" href="{% url 'landing' %}">robot<span style="color:#375A7F;">lights</span>you</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
-            {% comment %} <li class="nav-item active">
-                <a class="nav-link" href="{% url 'scripts-index' %}">home
-                <span class="sr-only">(current)</span>
-                </a>
-            </li> {% endcomment %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'landing' %}">python</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'overview' %}">overview</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'lessonlist' %}">lessons</a>
-            </li>
-            </ul>
-            {% comment %} <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </form> {% endcomment %}
-        </div>
-    </nav>
-    <div class="jumbotron bg-cover" style="margin-top:75px; background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url({% static "landing/images/index_hero2.png" %})">
-    {% comment %} <div class="jumbotron text-center"> {% endcomment %}
-        <style>
-            h1 {font-size:6vw;
-            text-align:center;}
-        </style>
-        {% block jumbo %}{% endblock jumbo %}
-    </div> 
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                {% comment %} <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'scripts-index' %}">home
+                    <span class="sr-only">(current)</span>
+                    </a>
+                </li> {% endcomment %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'python' %}">python</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'overview' %}">overview</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'lessonlist' %}">lessons</a>
+                </li>
+                </ul>
+                {% comment %} <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form> {% endcomment %}
+            </div>
+        </nav>
+    {% endblock navbar %}
+
+    {% block jumbo-pic %}
+        <div class="jumbotron bg-cover" style="margin-top:75px; background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url({% static "landing/images/index_hero2.png" %})">
+        {% comment %} <div class="jumbotron text-center"> {% endcomment %}
+            <style>
+                h1 {font-size:6vw;
+                text-align:center;}
+            </style>
+            {% block jumbo %}{% endblock jumbo %}
+        </div> 
+    {% endblock jumbo-pic %}
 
     {% block content %}{% endblock content %}
 
