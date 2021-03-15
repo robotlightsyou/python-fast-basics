@@ -17,13 +17,14 @@
         <div class="media-body">
             <div class="article-metadata">
                 <h2>{{ lesson.name }}</h2>
-                <small class="text-muted">{{ lesson.pub_date |date:"d F Y" }}</small>
+                <small class="text-muted">Last updated: </small><small>{{ lesson.pub_date |date:"d F Y" }}</small>
             </div>
                 {% for element in elements %}
                     {% if not element.code %}
                         <p>{{ element.body|safe }}</p>
                     {% else %}
                         <pre>{{ element.code }}</pre>
+                        <p>{{ element.body|safe }}</p>
                     {% endif %}
                 {% endfor %}
         </div>

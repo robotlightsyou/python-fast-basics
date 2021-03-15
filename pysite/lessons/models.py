@@ -6,7 +6,7 @@ class Lesson(models.Model):
     name = models.CharField(max_length=256)
     id = models.AutoField(primary_key=True)
     custom_key = models.CharField(max_length=24, default=id)
-    pub_date = models.DateTimeField(default=timezone.now)
+    pub_date = models.DateTimeField(verbose_name="Last updated", auto_now=True)
     slug = models.SlugField(null=False, unique=True)
 
     class Meta():
