@@ -19,6 +19,6 @@ from .views import LessonDetailView, LessonListView
 
 urlpatterns = [
     path("<slug:slug>", LessonDetailView.as_view(), name="lesson"),
-    path("list", LessonListView.as_view(), name="lessonlist"),
+    path("list/", LessonListView.as_view(), name="lessonlist"),
 
 ]
