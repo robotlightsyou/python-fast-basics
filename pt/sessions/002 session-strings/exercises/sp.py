@@ -36,8 +36,8 @@ print(swap_case(input("Please enter the text you want altered: ")))
 '''
 Next Steps:
 - rewrite function with the built in string.method that produces the same output
-- rewrite the program so it takes additional flags to return alternating letters based on even/odd index, or to return the reverse of a string(hint:indexing and slicing)
-- Create a fourth option, it should use if/elif/else statements to do at least 3 different outputs based on the user's input. Some examples:
+- write a new function that returns alternating letters based on even/odd index, or to return the reverse of a string(hint:indexing and slicing)
+- Create a function, it should use if/elif/else statements to do at least 3 different outputs based on the user's input. Some examples:
     if the user's string has more than one word, capitalize the first letter of the second word.
     if the user's string has more than 5 'y's return "That's too many 'y's."
 - The goal here is less to write a useful program and more to explore the different methods and get a little experience with control flow.
