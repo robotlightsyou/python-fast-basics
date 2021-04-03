@@ -4,15 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href={% static 'landing/bootstrap.min.css' %}>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     {% block title %}
         {% if title %}
             <title>{{ title }}</title>
@@ -24,40 +23,41 @@
 </head>
 <body>
     {% block navbar %}
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-warning">
-            <a class="navbar-brand" href="{% url 'landing' %}">robot<span style="color:#375A7F;">lights</span>you</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav mr-auto">
-                {% comment %} <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'scripts-index' %}">home
-                    <span class="sr-only">(current)</span>
-                    </a>
-                </li> {% endcomment %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'python' %}">python</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'overview' %}">overview</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'lessonlist' %}">lessons</a>
-                </li>
-                </ul>
-                {% comment %} <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form> {% endcomment %}
+        <header class="site-header">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-warning" role="navigation">
+                    <a class="navbar-brand" href="{% url 'landing' %}">robot<span style="color:#375A7F;">lights</span>you</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" aria-expanded="false" id="navbarColor01">
+                        <ul class="nav navbar-nav">
+                        <!-- <ul class="nav-list"> -->
+                        {% comment %} <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'scripts-index' %}">home
+                            <span class="sr-only">(current)</span>
+                            </a>
+                        </li> {% endcomment %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'python' %}">python</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'overview' %}">overview</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'lessonlist' %}">lessons</a>
+                        </li>
+                        </ul>
+                        {% comment %} <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                        </form> {% endcomment %}
             </div>
         </nav>
+        </header>
     {% endblock navbar %}
 
     {% block jumbo-pic %}
         <div class="jumbotron bg-cover" style="margin-top:75px; background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url({% static "landing/images/index_hero2.png" %})">
-        {% comment %} <div class="jumbotron text-center"> {% endcomment %}
             <style>
                 h1 {font-size:6vw;
                 text-align:center;}
@@ -68,6 +68,7 @@
 
     {% block content %}{% endblock content %}
 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 <footer style="text-align:center" class="m-2">Want to contribute to this site? Check us out on <span style="color:#375A7F;"><a href="https://github.com/robotlightsyou/python-fast-basics" target="_blank" rel="noopener">GITHUB</a></span></footer>
 </html>
