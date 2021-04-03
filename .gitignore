@@ -5,6 +5,8 @@
 **/config.json
 **/profile_pics/*
 **/pysite/static/
+**/package.json
+**/package-lock.json
 
 ### Django ###
 *.log
