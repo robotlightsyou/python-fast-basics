@@ -5,7 +5,7 @@ from sys import argv
 
 
 percentList = ["https://www.google.com/search?hl=en&q=",
-               "https://www.facebook.com/marketplace/la/search?query="]
+                "https://groups.google.com/search?q="]
 plusList = ["https://losangeles.craigslist.org/search/sss?query=",
             "https://www.amazon.com/s?k="]
 
