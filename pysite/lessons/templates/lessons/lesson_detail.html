@@ -37,7 +37,7 @@
             <ul>
                 <div class="list-group">
                 {% comment %} <span style="font-size:large, font-weight:bold; color:375A7F"><a href="#" class="list-group-item list-group-item-action active">lessons</a></span> {% endcomment %}
-                <span style="font-size:large, font-weight:bold; color:375A7F" class="list-group-item list-group-item-action active">lessons</span>
+		<a href="{% url 'lessonlist' %}"><span style="font-size:large, font-weight:bold; color:375A7F" class="list-group-item list-group-item-action active">lessons</span></a>
                 {% for lesson in lessons %}
                     <a href="{{ lesson.slug }}" class="list-group-item list-group-item-action">{{ lesson.name }}</a>
                 {% endfor %}
