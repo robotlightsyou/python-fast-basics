@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
+from martor.models import MartorField
+
 
 class Lesson(models.Model):
     name = models.CharField(max_length=256)
@@ -14,14 +16,16 @@ class Lesson(models.Model):
 
     def __str__(self):
         return self.name
-        
+
     def get_absolute_url(self):
-        return reverse("lesson", kwargs={"slug":self.slug})
+        return reverse("lesson", kwargs={"slug": self.slug})
+
 
 class Lesson_Content(models.Model):
     name = models.CharField(max_length=50, null=True, blank=True)
     code = models.TextField(null=True, blank=True)
-    body = models.TextField(null=True, blank=True)
+    # body = models.TextField(null=True, blank=True)
+    body = MartorField(blank=True, null=True)
     item_num = models.IntegerField(unique=True)
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
 
@@ -30,3 +34,4 @@ class Lesson_Content(models.Model):
 
     def __str__(self):
         return str(f"{self.lesson}: {self.name} {self.item_num}")
+
