@@ -1,4 +1,12 @@
 {% extends "landing/base.html" %}
+{% load static %}
+{% load martortags %}
+{% block css %}
+    <link href="{% static 'plugins/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+    {% comment %} <link href="{% static 'martor/css/martor.bootstrap.min.css' %}" type="text/css" media="all" rel="stylesheet" /> {% endcomment %}
+    {% comment %} <link href="{% static 'plugins/css/ace.css' %}" type="text/css" media="all" rel="stylesheet" /> {% endcomment %}
+    {% comment %} <link href="{% static 'martor/css/martor.bootstrap.css' %}" type="text/css" media="all" rel="stylesheet" /> {% endcomment %}
+{% endblock %}
 
 {% block title %}
     <title>{{ lesson.slug }}</title>
@@ -21,14 +29,22 @@
                             <h2>{{ lesson.name }}</h2>
                             <small class="text-muted">Last updated: </small><small>{{ lesson.pub_date |date:"d F Y" }}</small>
                         </div>
+                        {% comment %} <div style="background:#222" class="martor-preview"> {% endcomment %}
+                        <div class="martor-preview">
+                        <!-- <style -->
+                        <!--     .hljs bash{ -->
+                        <!--         background:#222; -->
+                        <!--     } -->
+                        <!-- </style> -->
                             {% for element in elements %}
                                 {% if not element.code %}
-                                    <p>{{ element.body|safe }}</p>
+                                    <p>{{ element.body|safe_markdown }}</p>
                                 {% else %}
                                     <pre>{{ element.code }}</pre>
-                                    <p>{{ element.body|safe }}</p>
+                                    <p>{{ element.body|safe_markdown }}</p>
                                 {% endif %}
                             {% endfor %}
+                        </div>
                     </div>
                 </article>
             </div>
@@ -48,6 +64,14 @@
 </main>
 {% endblock content %}
 
+{% block js %}
+  <script type="text/javascript" src="{% static 'plugins/js/highlight.min.js' %}"></script>
+  <script>
+    $('.martor-preview pre').each(function(i, block){
+        hljs.highlightBlock(block);
+    });
+  </script>
+{% endblock js %}
 
 {% comment %} {% block sidebar %}This is a test{% endblock sidebar %} {% endcomment %}
 

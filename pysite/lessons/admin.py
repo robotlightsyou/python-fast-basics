@@ -1,8 +1,13 @@
 from django.contrib import admin
 from .models import Lesson, Lesson_Content
 from django.db import models
-# from martor.widgets import AdminMartorWidget
-from martor.widgets import MartorWidget
+from martor.widgets import AdminMartorWidget
+
+
+
+
+
+# from martor.widgets import MartorWidget
 # from django_summernote.admin import  SummernoteModelAdmin
 
 # class LessonAdmin(admin.ModelAdmin):
@@ -17,14 +22,15 @@ from martor.widgets import MartorWidget
 # admin.site.register(Lesson_Content, SummerAdmin)
 
 # admin.site.register(Lesson)
-admin.site.register(Lesson_Content)
-
 
 
 class LessonAdmin(admin.ModelAdmin):
     formfield_overrides = {
-        models.TextField: {'widget': MartorWidget},
-        # models.TextField: {'widget': AdminMartorWidget},
+        # models.TextField: {'widget': MartorWidget},
+        models.TextField: {'widget': AdminMartorWidget},
     }
 
+
 admin.site.register(Lesson, LessonAdmin)
+
+admin.site.register(Lesson_Content)
