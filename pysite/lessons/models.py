@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
+from martor.models import MartorField
 
 class Lesson(models.Model):
     name = models.CharField(max_length=256)
@@ -21,7 +22,8 @@ class Lesson(models.Model):
 class Lesson_Content(models.Model):
     name = models.CharField(max_length=50, null=True, blank=True)
     code = models.TextField(null=True, blank=True)
-    body = models.TextField(null=True, blank=True)
+    # body = models.TextField(null=True, blank=True)
+    body = MartorField()
     item_num = models.IntegerField(unique=True)
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
 
