@@ -12,10 +12,10 @@ def main():
     plusList = ["https://losangeles.craigslist.org/search/sss?query=",
                 "https://www.amazon.com/s?k="]
 
-# for loop over lists
-    # for url in percentList:
-    #     url = url + "%20".join(argv[1:])
-    #     open_new_tab(url)
+#for loop over lists
+    for url in percentList:
+        url = url + "%20".join(argv[1:])
+        open_new_tab(url)
 
     for url in plusList:
         url = url + "+".join(argv[1:])
