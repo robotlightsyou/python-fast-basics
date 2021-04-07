@@ -25,9 +25,12 @@ from martor.widgets import AdminMartorWidget
 
 
 class LessonAdmin(admin.ModelAdmin):
+    list_display = ["name"]
+    prepopulated_fields = {"slug": ("name",)}
     formfield_overrides = {
         # models.TextField: {'widget': MartorWidget},
         models.TextField: {'widget': AdminMartorWidget},
+
     }
 
 
