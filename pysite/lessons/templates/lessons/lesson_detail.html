@@ -2,10 +2,8 @@
 {% load static %}
 {% load martortags %}
 {% block css %}
-    <link href="{% static 'plugins/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet" />
-    {% comment %} <link href="{% static 'martor/css/martor.bootstrap.min.css' %}" type="text/css" media="all" rel="stylesheet" /> {% endcomment %}
-    {% comment %} <link href="{% static 'plugins/css/ace.css' %}" type="text/css" media="all" rel="stylesheet" /> {% endcomment %}
-    {% comment %} <link href="{% static 'martor/css/martor.bootstrap.css' %}" type="text/css" media="all" rel="stylesheet" /> {% endcomment %}
+    {% comment %} <link href="{% static 'plugins/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet" /> {% endcomment %}
+    <link href="{% static 'lessons/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet" />
 {% endblock %}
 
 {% block title %}
@@ -56,11 +54,20 @@
         <div class="col-md-4">
             <ul>
                 <div class="list-group">
-                {% comment %} <span style="font-size:large, font-weight:bold; color:375A7F"><a href="#" class="list-group-item list-group-item-action active">lessons</a></span> {% endcomment %}
                 <a href="{% url 'lessonlist' %}"><span style="font-size:large, font-weight:bold; color:375A7F" class="list-group-item list-group-item-action active">lessons</span></a>
-                {% for lesson in lessons %}
+                {% comment %} {% for lesson in lessons %}
                     <a href="{{ lesson.slug }}" class="list-group-item list-group-item-action">{{ lesson.name }}</a>
+                    
+
+                {% endfor %} {% endcomment %}
+
+                {% for item in lc %}
+                    <a  class="list-group-item list-group-item-action">{{ item.lesson.name }}</a>
+                    {% for text in item.contents %}
+                       <a class="list-group-item list-group-item">{{ text.name }}</a>
+                    {% endfor %}
                 {% endfor %}
+                
                 </div>
             </ul>
         </div>
@@ -79,3 +86,10 @@
 
 {% comment %} {% block sidebar %}This is a test{% endblock sidebar %} {% endcomment %}
 
+{% comment %} {% for lesson in lessons %}
+    <a href="{{ lesson.slug }}" class="list-group-item list-group-item-action">{{ lesson.name }}</a>
+    {% for lesson, lesson_contents in lc.items %} {{ lesson.name }}: 
+        {% for lesson_content in lesson_contents %} 
+            {{ lesson_content.name }}, 
+        {% endfor %} 
+    {% endfor %} {% endcomment %}
