@@ -12,6 +12,19 @@ class LessonDetailView(DetailView):
         name = get_object_or_404(models.Lesson, slug=self.kwargs.get('slug'))
         context["elements"] = models.Lesson_Content.objects.filter(lesson=name).order_by("item_num")
         context["lessons"] = models.Lesson.objects.all()
+        
+        all_lessons = context["lessons"]
+        
+        context['lc'] = []
+        for lesson in all_lessons:
+            # creates list of dictionaries -> {'contents':[lesson_contents], 'lesson':lesson}
+            lesson_ = {'contents': models.Lesson_Content.objects.filter(lesson__name=lesson.name), 'lesson':lesson}
+            context['lc'].append(lesson_)
+        # for item in context['lc']:
+        #     print(item['lesson'])
+        #     for content in item['contents']:
+        #         print(f"\t{content}")
+
         return context
     
 class LessonListView(ListView):

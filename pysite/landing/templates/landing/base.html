@@ -6,9 +6,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!--Martor-->
-    {% comment %} <link href="{% static 'plugins/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet" /> {% endcomment %}
-    {% comment %} <link href="{% static 'martor/css/martor.bootstrap.min.css' %}" type="text/css" media="all" rel="stylesheet" /> {% endcomment %}
 
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -54,7 +51,6 @@
 
     {% block jumbo-pic %}
         <div class="jumbotron bg-cover" style="margin-top:70px; background-position:40% 32%; background-size:cover; background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url({% static "landing/images/index_hero2.png" %})">
-        {% comment %} <div class="jumbotron-bg-cover"> {% endcomment %}
             <style>
                 h1 {font-size:6vw;
                 text-align:center;}
@@ -62,9 +58,7 @@
             {% block jumbo %}{% endblock jumbo %}
         </div> 
     {% endblock jumbo-pic %}
-    {% comment %} <div class="content-markdown"> {% endcomment %}
         {% block content %}{% endblock content %}
-    {% comment %} </div> {% endcomment %}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src= "https://cdnjs.cloudflare.com/ajax/libs/marked/1.1.1/marked.min.js"></script>
