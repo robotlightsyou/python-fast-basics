@@ -21,22 +21,13 @@
     <div class="row">
         <div class="col-md-8">
             <div class="container">
-                {% comment %} <article class="media content-section"> {% endcomment %}
                 <article class="content-section">
                     <div class="media-body">
                         <div class="article-metadata">
                             <h2>{{ lesson.name }}</h2>
                             <small class="text-muted">Last updated: </small><small>{{ lesson.pub_date |date:"d F Y" }}</small>
                         </div>
-                        {% comment %} <div style="background:#222" class="martor-preview"> {% endcomment %}
                         <div class="martor-preview">
-                        <!-- <style -->
-                        <!--     .hljs bash{ -->
-                        <!--         background:#222; -->
-                        <!--     } -->
-                        <!-- </style> -->
-                        {% comment %} <div class="content-markdown"> {% endcomment %}
-                        {% comment %} <div class="martor-preview"> {% endcomment %}
                             {% for element in elements %}
                                 {% if not element.code %}
                                     <p>{{ element.body|safe_markdown }}</p>
@@ -46,7 +37,6 @@
                                 {% endif %}
                             {% endfor %}
                         </div>
-                        {% comment %} </div> {% endcomment %}
                     </div>
                 </article>
             </div>
@@ -54,20 +44,13 @@
         <div class="col-md-4">
             <ul>
                 <div class="list-group">
-                <a href="{% url 'lessonlist' %}"><span style="font-size:large, font-weight:bold; color:375A7F" class="list-group-item list-group-item-action active">lessons</span></a>
-                {% comment %} {% for lesson in lessons %}
-                    <a href="{{ lesson.slug }}" class="list-group-item list-group-item-action">{{ lesson.name }}</a>
-                    
-
-                {% endfor %} {% endcomment %}
-
-                {% for item in lc %}
-                    <a  class="list-group-item list-group-item-action">{{ item.lesson.name }}</a>
-                    {% for text in item.contents %}
-                       <a class="list-group-item list-group-item">{{ text.name }}</a>
+                    <a href="{% url 'lessonlist' %}"><span style="font-size:large, font-weight:bold; color:375A7F" class="list-group-item list-group-item-action active">lessons</span></a>
+                    {% for item in lc %}
+                        <a href="{{ item.lesson.slug }}" class="list-group-item list-group-item-action">{{ item.lesson.name }}</a>
+                        {% for text in item.contents %}
+                           <a class="list-group-item list-group-item">{{ text.name }}</a>
+                        {% endfor %}
                     {% endfor %}
-                {% endfor %}
-                
                 </div>
             </ul>
         </div>
@@ -83,13 +66,3 @@
     });
   </script>
 {% endblock js %}
-
-{% comment %} {% block sidebar %}This is a test{% endblock sidebar %} {% endcomment %}
-
-{% comment %} {% for lesson in lessons %}
-    <a href="{{ lesson.slug }}" class="list-group-item list-group-item-action">{{ lesson.name }}</a>
-    {% for lesson, lesson_contents in lc.items %} {{ lesson.name }}: 
-        {% for lesson_content in lesson_contents %} 
-            {{ lesson_content.name }}, 
-        {% endfor %} 
-    {% endfor %} {% endcomment %}

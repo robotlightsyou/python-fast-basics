@@ -24,7 +24,6 @@ class Lesson(models.Model):
 class Lesson_Content(models.Model):
     name = models.CharField(max_length=50, null=True, blank=True)
     code = models.TextField(null=True, blank=True)
-    # body = models.TextField(null=True, blank=True)
     body = MartorField(blank=True, null=True)
     item_num = models.IntegerField(unique=True)
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
