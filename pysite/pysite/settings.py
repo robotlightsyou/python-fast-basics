@@ -47,11 +47,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "landing.apps.LandingConfig",
     "lessons.apps.LessonsConfig",
-    "django_summernote",
     "martor",
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -192,3 +193,6 @@ MARTOR_MARKDOWN_BASE_MENTION_URL = 'https://python.web.id/author/'
 
 CSRF_COOKIE_HTTPONLY = False
 
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
