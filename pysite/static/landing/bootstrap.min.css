@@ -9626,6 +9626,7 @@ a.text-dark:hover {
     -moz-background-size: cover;
     -o-background-size: cover;
     /* width: 100vw; */
+
 }
 
 .innermenu{
@@ -9643,4 +9644,5 @@ a.text-dark:hover {
 .innermenu-item:hover {
     background-color: #F39C12;
     color: #375a7f;
+
 }
