@@ -9575,6 +9575,34 @@ a.text-dark:hover {
 .list-group-item-action {
     color: #fff;
 }
+
+
+.collapsible {
+    /* background-color: #777; */
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  /* .active, .collapsible:hover {
+    background-color: #555;
+  } */
+  
+  .content {
+    padding: 0 0px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    /* background-color: #f1f1f1; */
+  }
+
+
+
 .list-group-item-action:focus,
 .list-group-item-action:hover {
     background-color: #F39C12;
@@ -9644,3 +9672,4 @@ a.text-dark:hover {
     background-color: #F39C12;
     color: #375a7f;
 }
+
