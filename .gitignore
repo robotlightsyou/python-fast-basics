@@ -8,6 +8,8 @@
 **/pysite/media/*
 **/package.json
 **/package-lock.json
+**/debug_toolbar/
+*lcnotes.txt
 
 ### Django ###
 *.log
