@@ -18,7 +18,6 @@
             {% for lesson in lessons %}
                 <h3>
                     <li><a href="{% url 'lesson' lesson.slug %}">{{ lesson.name }}</a></li>
-                    {% comment %} <li><a href="{{ lesson.slug }}">{{ lesson.name }} {{ lesson.slug }}</a></li> {% endcomment %}
                 </h3>
             {% endfor %}
         </ol>

@@ -9575,14 +9575,7 @@ a.text-dark:hover {
 .list-group-item-action {
     color: #fff;
 }
-.list-group-item-action:focus,
-.list-group-item-action:hover {
-background-color: #F39C12;
-    color: #375a7f;
-}
-.list-group-item-action .list-group-item-heading {
-    color: #fff;
-}
+
 
 .collapsible {
     /* background-color: #777; */
@@ -9604,10 +9597,20 @@ background-color: #F39C12;
     padding: 0 0px;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    transition: max-height 0.3s ease-out;
     /* background-color: #f1f1f1; */
   }
 
+
+
+.list-group-item-action:focus,
+.list-group-item-action:hover {
+    background-color: #F39C12;
+    color: #375a7f;
+}
+.list-group-item-action .list-group-item-heading {
+    color: #fff;
+}
 
 .list-group-item.active {
 
@@ -9651,7 +9654,6 @@ background-color: #F39C12;
     -moz-background-size: cover;
     -o-background-size: cover;
     /* width: 100vw; */
-
 }
 
 .innermenu{
@@ -9660,22 +9662,27 @@ background-color: #F39C12;
     position: relative;
     display: inline-block;
     padding: 0.15rem .5rem;
+    font-size: 20px;
 }
 .innermenu-div{
     border-radius: 0.15rem;
     border: 1px solid #444;
     padding-left: 1rem;
     padding-right: 1rem;
-    font-size: 2.25vh;
     width: 98%;
+    display: none;
 }
 .innermenu-item:focus,
 .innermenu-item:hover {
     background-color: #F39C12;
     color: #375a7f;
-
 }
 
 .sidebar-center {
     padding-left: 0rem;
+    border-radius: 50px;
+}
+
+.list-group-round-sidebar {
+    border-radius: 50px;
 }

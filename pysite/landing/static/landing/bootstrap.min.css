@@ -9597,7 +9597,7 @@ a.text-dark:hover {
     padding: 0 0px;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    transition: max-height 0.3s ease-out;
     /* background-color: #f1f1f1; */
   }
 
@@ -9662,14 +9662,15 @@ a.text-dark:hover {
     position: relative;
     display: inline-block;
     padding: 0.15rem .5rem;
-    font-size: 2.25vh;
+    font-size: 20px;
 }
 .innermenu-div{
     border-radius: 0.15rem;
     border: 1px solid #444;
     padding-left: 1rem;
     padding-right: 1rem;
-    width: 90vw;
+    width: 98%;
+    display: none;
 }
 .innermenu-item:focus,
 .innermenu-item:hover {
@@ -9679,4 +9680,9 @@ a.text-dark:hover {
 
 .sidebar-center {
     padding-left: 0rem;
+    border-radius: 50px;
+}
+
+.list-group-round-sidebar {
+    border-radius: 50px;
 }
