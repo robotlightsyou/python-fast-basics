@@ -29,11 +29,13 @@ with open(KEY_FILE) as config_file:
 SECRET_KEY = config["Secret_Key"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = False
+DEBUG = False
 ALLOWED_HOSTS = ["45.79.86.220", "www.robotlightsyou.com", "robotlightsyou.com"]
 
-DEBUG = True
+#DEBUG = True
 # ALLOWED_HOSTS = ["localhost", "192.168.1.177"]
+# DEBUG = False
+
 
 
 # Application definition
