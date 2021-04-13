@@ -9577,7 +9577,7 @@ a.text-dark:hover {
 }
 .list-group-item-action:focus,
 .list-group-item-action:hover {
-    background-color: #F39C12;
+background-color: #F39C12;
     color: #375a7f;
 }
 .list-group-item-action .list-group-item-heading {
@@ -9593,7 +9593,7 @@ a.text-dark:hover {
     border: none;
     text-align: left;
     outline: none;
-    font-size: 15px;
+    font-size: 5vh;
   }
   
   /* .active, .collapsible:hover {
@@ -9664,10 +9664,35 @@ a.text-dark:hover {
 .innermenu-div{
     border-radius: 0.15rem;
     border: 1px solid #444;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 .innermenu-item:focus,
 .innermenu-item:hover {
     background-color: #F39C12;
     color: #375a7f;
 
+}
+
+/* .col-md-4{
+    display: flex;
+    justify-content: center;
+} */
+
+.container > .row > .col-md-4:first-child {
+    display: flex; /* display flex-items (children) inline */
+    justify-content: center; /* centers them horizontally */
+    align-items: center; /* and vertically */
+  }
+
+.sidebar-center {
+    display: flex; /* display flex-items (children) inline */
+    justify-content: center; /* centers them horizontally */
+    align-items: center; /* and vertically */
+    text-align: center;
+}
+
+ul {
+    width: 70%;
+    margin: auto;
 }
