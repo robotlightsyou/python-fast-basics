@@ -49,12 +49,10 @@
         <div class="col-md-4">
             <ul>
                 <div class="list-group">
-                    <a href="{% url 'lessonlist' %}"><span style="font-size:large, font-weight:bold; color:375A7F" class="list-group-item list-group-item-action active">lessons</span></a>
+                    <a href="{% url 'lessonlist' %}"><span style="font-size:large, font-weight:bold; color:375A7F" class="list-group-item list-group-item-action active">chapters</span></a>
 
 
-                    {% for item in lc %}
                         {% comment %} <button class="collapsaible list-group-item list-group-item-action"> {% endcomment %}
-<button class="collapsible list-group-item list-group-item-action">{{ item.lesson.name }}</button>
                             {% comment %} <a href="{{ item.lesson.slug }}" class="list-group-item list-group-item-action">{{ item.lesson.name }}</a> {% endcomment %}
                             {% comment %} <p class="list-group-item list-group-item-action">{{ item.lesson.name }}</p> {% endcomment %}
                             {% comment %} {{ item.lesson.name }} {% endcomment %}
@@ -63,15 +61,26 @@
                         {% comment %} <button type="button" class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#{{item.lesson.slug}}">{{ item.lesson.name }}</button> {% endcomment %}
                             {% comment %} <div class="collapse m-2" id="#{{item.lesson.slug}}"> {% endcomment %}
                         {% comment %} <div class="content container innermenu innermenu-div"> {% endcomment %}
-<div class="content container innermenu innermenu-div">
-                        {% for text in item.contents %}
-  <a href="{{ item.lesson.slug }}" class="innermenu innermenu-item">{{ text.name }}</a><br>
                                 {% comment %} <a href="{{item.lesson.slug}}" class="innermenu innermenu-item">{{ text.name }}</a><br> {% endcomment %}
+                    {% comment %} {% for item in lc %}
+                        <button class="collapsible list-group-item list-group-item-action">{{ item.lesson.name }}</button>
+                        <div class="content container innermenu innermenu-div">
+                            {% for text in item.contents %}
+                              <a href="{{ item.lesson.slug }}" class="innermenu innermenu-item">{{ text.name }}</a><br>
                         {% endfor %}
                         </div> 
+                    {% endfor %} {% endcomment %}
+                    {% for item in cc %}
+                        <button class="collapsible list-group-item list-group-item-action">{{ item.chapter.name }}</button>
+                        <div class="content container innermenu innermenu-div">
+                            {% for text in item.contents %}
+                              {% comment %} <a href="{{ item.lesson.slug }}" class="innermenu innermenu-item">{{ item.lesson.name }}</a><br> {% endcomment %}
+                              <a href="{{ text.slug }}" class="innermenu innermenu-item">{{ text.name }}</a><br>
+                            {% endfor %}
+                        </div>
                     {% endfor %}
-</div>
 
+                </div>
                 </div>
             </ul>
         </div>
