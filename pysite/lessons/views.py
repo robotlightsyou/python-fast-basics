@@ -27,6 +27,19 @@ class LessonListView(ListView):
     model = models.Lesson
     context_object_name = "lessons"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        ##  Add chapters
+        context['chapters'] = models.Chapter.objects.all()
+        all_chapters = context['chapters']
+        context['cc'] = []
+        for chapter in all_chapters:
+            lesson_ = {'contents':models.Lesson.objects.filter(chapter__name=chapter.name), 'chapter':chapter}
+            context['cc'].append(lesson_)
+            # context['blue'] = blue
+        return context    
+
 class ChapterListView(ListView):
     model = models.Chapter
     context_object_name = "chapters"

@@ -9693,3 +9693,12 @@ a.text-dark:hover {
 .list-group-round-sidebar {
     border-radius: 50px;
 }
+
+.lesson-list {
+    width: 90%;
+    color: #F39C12;
+}
+
+.lesson-list-outer {
+    color: #e0dbae;
+}
