@@ -15,11 +15,30 @@
         <div class="col-md-8">
         <h2>Current Lessons</h2>
         <ol>
-            {% for lesson in lessons %}
-                <h3>
-                    <li><a href="{% url 'lesson' lesson.slug %}">{{ lesson.name }}</a></li>
-                </h3>
-            {% endfor %}
+            {% comment %} {% for item in cc %}
+                {% if object in item.contents %}
+                            <button class="collapsible list-group-item list-group-item-action">{{ item.chapter.name }}</button>
+                {% else %}
+                            <button class="collapsible list-group-item list-group-item">{{ item.chapter.name }}</button>
+                {% endif %}
+                <div class="content container innermenu innermenu-div">
+                    {% for text in item.contents %}
+                      <a href="{{ text.slug }}" class="innermenu innermenu-item">{{ text.name }}</a><br>
+                    {% endfor %}
+                </div>
+            {% endfor %} {% endcomment %}
+            <div class="lesson-list-outer">
+                {% for item in cc %}
+                    <h3>{{item.chapter.name }}</h3>
+                    <div class="container lesson-list">
+                        {% for text in item.contents %}
+                            <h4>
+                                <li><a href="{{ text.slug }}">{{ text.name }}</a></li>
+                            </h4>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
         </ol>
         </div>
     </div>
