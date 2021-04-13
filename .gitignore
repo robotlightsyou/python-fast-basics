@@ -1,7 +1,6 @@
-#*.sqlite3
+*.sqlite3
 # **/settings.py
 # **/static/first_app/images/*
-**/fonts/*
 **/images/*
 **/config.json
 **/profile_pics/*
@@ -16,18 +15,10 @@
 *.pyc
 __pycache__/
 local_settings.py
-#db.sqlite3
-#db.sqlite3-journal
+db.sqlite3
+db.sqlite3-journal
 media/
 **/img/*
-**/static/martor/
-**/static/admin/
-**/pysite/static/dicts/
-**/static/debug_toolbar/
-**/static/dicts/
-**/static/plugins/js/*
-
-
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
 # in your Git repository. Update and uncomment the following line accordingly.
