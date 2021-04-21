@@ -30,13 +30,6 @@ def idiv(a, b):
 def mod(a, b):
     return a % b
 
+def exp(a, b):
+    return a ** b
 
-print(mod(68, 3))
-print(idiv(68, 3))
-print(mult(68, 3))
-
-# if __name__ == "__main__":
-#     print("oops, I didn't mean to run this")
-# print(mod(68, 3))
-# print(idiv(68, 3))
-# print(mult(68, 3))

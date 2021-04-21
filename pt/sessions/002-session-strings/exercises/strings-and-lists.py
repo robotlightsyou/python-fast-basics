@@ -12,13 +12,17 @@ def main():
     plusList = ["https://losangeles.craigslist.org/search/sss?query=",
                 "https://www.amazon.com/s?k="]
 
+    print("What would you like to search for?")
+    query = input("> ")
 #for loop over lists
     for url in percentList:
-        url = url + "%20".join(argv[1:])
+        # url = url + "%20".join(argv[1:])
+        url = url + "%20".join(query.split())
         open_new_tab(url)
 
     for url in plusList:
-        url = url + "+".join(argv[1:])
+        # url = url + "+".join(argv[1:])
+        url = url + "+".join(query.split())
         open_new_tab(url)
 
 # open each site

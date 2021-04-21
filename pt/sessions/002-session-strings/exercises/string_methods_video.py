@@ -2,10 +2,28 @@
 '''
 Ask the user for input, modify the return
 '''
-def main():
-    print(swap_case())
 
-def swap_case():
+#print("helloworld")
+
+import sys
+
+global_var = "howdy"
+
+def main(data):
+    print_some_word(data)
+    data = 'test'
+    print_some_word(data)
+    
+def print_some_word(word):
+    print(word)
+
+if __name__ == "__main__":
+    someword = 'blue'
+    main(someword)
+
+
+    '''
+    def swap_case():
 
     print("Please enter a string to alter. ")
     start = input(">")
@@ -20,6 +38,4 @@ def swap_case():
             end += letter
 
     return end
-
-if __name__ == "__main__":
-    main()
+    '''
