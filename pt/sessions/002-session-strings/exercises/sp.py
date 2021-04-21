@@ -1,4 +1,6 @@
 #! /usr/bin/env python3
+
+'''
 # start with getting a string from the user
 start = input("Please enter the text you want altered: ")
 
@@ -16,8 +18,9 @@ for letter in start:
         output += letter
 
 print(output)
-#Now lets try putting that into a function so you can call it multiple times
 '''
+#Now lets try putting that into a function so you can call it multiple times
+
 def swap_case(string):
 
     output = ""
@@ -31,7 +34,7 @@ def swap_case(string):
     return output
 
 print(swap_case(input("Please enter the text you want altered: ")))
-'''
+
 
 '''
 Next Steps:
