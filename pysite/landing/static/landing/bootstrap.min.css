@@ -3986,6 +3986,7 @@ input[type="submit"].btn-block {
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 1rem 1rem;
+    border-bottom: solid 2px #375a7f;
 }
 .navbar .container,
 .navbar .container-fluid,
@@ -9674,10 +9675,10 @@ a.text-dark:hover {
 .innermenu-div{
     border-radius: 0.15rem;
     border: 1px solid #444;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    /* padding-left: 1rem;
+    padding-right: 1rem; */
     width: 98%;
-    display: none;
+    display: block;
 }
 .innermenu-item:focus,
 .innermenu-item:hover {
@@ -9701,4 +9702,35 @@ a.text-dark:hover {
 
 .lesson-list-outer {
     color: #e0dbae;
+}
+
+
+
+
+.accordion-item {
+    background-color: #222;
+}
+.accordion-button {
+    background-color: #303030;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #375a7f;
+    background-color: #f39c12;
+    border-color: #375a7f;
+}
+
+.accordion-button:focus,
+.accordion-item:focus {
+    border-color: #375a7f;
+}
+
+.tester {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+
+.accordion-collapse {
+    border: solid rgba(0,0,0,.125);
+    border-width: 0 0px;
 }
