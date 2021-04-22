@@ -1,0 +1,104 @@
+{% extends "landing/base.html" %}
+{% load static %}
+{% load martortags %}
+{% block css %}
+    {% comment %} <link href="{% static 'plugins/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet" /> {% endcomment %}
+    <link href="{% static 'lessons/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+{% endblock %}
+
+{% block title %}
+    <title>{{ lesson.slug }}</title>
+{% endblock title %}
+
+{% block jumbo %}
+    <div class="container">
+        <h1 style="text-align:center">python fast basics</h1>
+    </div>
+{% endblock jumbo %}
+
+{% block content %}
+<main class="container" role="main">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="container">
+                <article class="content-section">
+                    <div class="media-body">
+                        <div class="article-metadata">
+                            <h2>{{ lesson.name }}</h2>
+                            <small class="text-muted">Last updated: </small><small>{{ lesson.pub_date |date:"d F Y" }}</small>
+                        </div>
+
+                        <div class="martor-preview">
+                            {% for element in elements %}
+                                {% if not element.code %}
+                                    <p>{{ element.body|safe_markdown }}</p>
+                                {% else %}
+                                    <pre>{{ element.code }}</pre>
+                                    <p>{{ element.body|safe_markdown }}</p>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <ul class="sidebar-center">
+                <div class="list-group-round-sidebar">
+                    <a href="{% url 'lessonlist' %}"><span style="font-size:large, font-weight:bold; color:375A7F" class="list-group-item list-group-item-action active">chapters</span></a>
+                        {% for item in cc %}
+                        {% comment %} {% if item.chapter.slug == name %} {% endcomment %}
+                        {% if object in item.contents %}
+                            <button class="collapsible list-group-item list-group-item-action">{{ item.chapter.name }}</button>
+                        {% else %}
+                            <button class="collapsible list-group-item list-group-item">{{ item.chapter.name }}</button>
+                        {% endif %}
+                            <div class="content container innermenu innermenu-div">
+                                {% for text in item.contents %}
+                                  <a href="{{ text.slug }}" class="innermenu innermenu-item">{{ text.name }}</a><br>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+</main>
+{% endblock content %}
+
+{% block js %}
+  {% comment %} <script type="text/javascript" src="{% static 'plugins/js/highlight.min.js' %}"></script> {% endcomment %}
+  <script type="text/javascript" src="{% static 'lessons/js/lessonsjs.js' %}"></script>
+  {% comment %} <script>
+    $('.martor-preview pre').each(function(i, block){
+        hljs.highlightBlock(block);
+    });
+  </script>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+          content.style.display = 'none';
+        } else {
+          content.style.display = 'block';
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
+  </script> {% endcomment %}
+
+{% endblock js %}
