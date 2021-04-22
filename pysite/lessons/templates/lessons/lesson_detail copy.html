@@ -50,38 +50,55 @@
 
         <div class="col-md-4">
             <ul class="sidebar-center">
-                
-                <div>
-                    <a href="{% url 'lessonlist' %}"><span style="font-size:large, font-weight:bold; color:375A7F" class="list-group-item list-group-item-action active">chapters</span></a> 
+                <div class="list-group-round-sidebar">
+                    <a href="{% url 'lessonlist' %}"><span style="font-size:large, font-weight:bold; color:375A7F" class="list-group-item list-group-item-action active">chapters</span></a>
+                        {% for item in cc %}
+                        {% comment %} {% if item.chapter.slug == name %} {% endcomment %}
+                        {% if object in item.contents %}
+                            <button class="collapsible list-group-item list-group-item-action">{{ item.chapter.name }}</button>
+                        {% else %}
+                            <button class="collapsible list-group-item list-group-item">{{ item.chapter.name }}</button>
+                        {% endif %}
+                            <div class="content container innermenu innermenu-div">
+                                {% for text in item.contents %}
+                                  <a href="{{ text.slug }}" class="innermenu innermenu-item">{{ text.name }}</a><br>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
-                <div class="accordion" id="accordionExample">
-                    {% for item in cc %}
-                        <div class="accordion-item">
-                            {% if object in item.contents %}
-                                <button class="accordion-button list-group-item list-group-item-action active collapsed" id="heading{{ forloop.counter }}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
-                                    {{ item.chapter.name }}
-                                </button>
-                            {% else %}
-                                <button class="accordion-button list-group-item list-group-item collapsed" id="heading{{ forloop.counter }}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
-                                    {{ item.chapter.name }}
-                                </button> 
-                            {% endif %}
-                                <div class="accordion-collapse collapse container tester" id="collapse{{ forloop.counter }}" aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="accordionExample">
-                                    <div class="innermenu innermenu-div">
-                                        {% for text in item.contents %} 
-                                           <a href="{{ text.slug }}" class="innermenu innermenu-item">{{ text.name }}</a><br>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                        </div>
-                    {% endfor %}
-                </div> 
             </ul>
-
         </div>
     </div>
 </main>
 {% endblock content %}
 
 {% block js %}
+  {% comment %} <script type="text/javascript" src="{% static 'plugins/js/highlight.min.js' %}"></script> {% endcomment %}
+  <script type="text/javascript" src="{% static 'lessons/js/lessonsjs.js' %}"></script>
+  {% comment %} <script>
+    $('.martor-preview pre').each(function(i, block){
+        hljs.highlightBlock(block);
+    });
+  </script>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+          content.style.display = 'none';
+        } else {
+          content.style.display = 'block';
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
+  </script> {% endcomment %}
+
 {% endblock js %}
